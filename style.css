@@ -1,0 +1,169 @@
+/* Base styles */
+body {
+    background: #fadede;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sacramento', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Header text */
+h1 {
+    color: #FE7696;
+    font-size: 64px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease; /* Smooth transition for text changes */
+}
+
+/* Button container */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+}
+
+/* Base button styling */
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    background: #FE7696;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative; /* For movement animation */
+}
+
+/* Hover effects */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* No button specific styling */
+#noBtn {
+    background: #f03a64;
+}
+
+/* Bouquet container */
+.bouquet {
+    display: none;
+    position: relative;
+    margin-top: 40px;
+    width: 600px;
+    height: 600px;
+}
+
+/* Individual rose styling */
+.rose {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    animation: yidon 5s infinite;
+    transform: translateY(40%);
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2)); /* Adds depth */
+}
+
+/* Petal styling */
+.petal {
+    width: 40px;
+    height: 40px;
+    background: #fe7696;
+    border-radius: 0px 50%;
+    position: absolute;
+    box-shadow: 0 0 10px #D1123F;
+    z-index: 2;
+    transform-origin: bottom right;
+    animation: zhankai2 10s infinite;
+}
+
+/* Color variations */
+.yellow-rose .petal { background: #FFEB3B; box-shadow: 0 0 10px #FFD600; }
+.white-rose .petal { background: #fff; box-shadow: 0 0 10px #ddd; }
+.orange-rose .petal { background: #FF9800; box-shadow: 0 0 10px #F57C00; }
+
+/* Petal positioning */
+.petal:nth-child(2) { transform: rotate(90deg); left: -10px; animation: zhankai1 10s infinite; }
+.petal:nth-child(3) { width: 30px; height: 30px; left: 8px; top: -15px; background: #f03a64; z-index: 1; }
+.petal:nth-child(4) { width: 30px; height: 30px; left: 0px; top: -15px; background: #f03a64; transform: rotate(90deg); z-index: 1; animation: zhankai1 10s infinite; }
+.petal:nth-child(5) { width: 40px; height: 40px; border-radius: 15px; left: 15px; top: -25px; background: #d1123f; z-index: 0; }
+
+/* Leaf and stem styling */
+.leaf {
+    position: absolute;
+    top: 80px;
+    left: -80px;
+}
+
+.stem {
+    width: 180px;
+    height: 30px;
+    border: 6px solid #8ac78a;
+    border-color: #77a377 transparent transparent transparent;
+    border-radius: 50% 50%;
+    transform: rotate(100deg);
+}
+
+.leafs {
+    width: 40px;
+    height: 30px;
+    border-radius: 0px 50%;
+    background: #77a377;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    z-index: 49;
+}
+
+.leafs:nth-child(2) {
+    width: 30px;
+    height: 15px;
+    top: 30px;
+    left: 110px;
+    transform: rotate(120deg);
+}
+
+/* Message animation */
+.message {
+    display: none;
+    font-size: 32px;
+    color: #FE7696;
+    margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes yidon {
+    50% { transform: translateY(35%); }
+    100% { transform: translateY(40%); }
+}
+
+@keyframes zhankai1 {
+    50% { transform: rotate(110deg); }
+    100% { transform: rotate(90deg); }
+}
+
+@keyframes zhankai2 {
+    50% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
